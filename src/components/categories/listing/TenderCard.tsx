@@ -55,7 +55,7 @@ export default function TenderCard({ tender, categorySlug }: TenderCardProps) {
     }
   };
 
-  const tenderStatus = tender.status || tender.publicationStatus || "published";
+  // const tenderStatus = tender.status || tender.publicationStatus || "published";
   const tenderTargetSlug = tender.slug || tender.id;
 
   return (
@@ -77,7 +77,7 @@ export default function TenderCard({ tender, categorySlug }: TenderCardProps) {
     "
     >
       <div className="flex-1">
-        <span
+        {/* <span
           className={`
           text-xs
           font-bold
@@ -89,7 +89,7 @@ export default function TenderCard({ tender, categorySlug }: TenderCardProps) {
         `}
         >
           {tenderStatus}
-        </span>
+        </span> */}
 
         <h3
           className="

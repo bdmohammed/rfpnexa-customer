@@ -1,29 +1,52 @@
+import { Country } from "@/features/country";
 import { Category } from "./category";
 import { State } from "./state";
 
 export interface Tender {
   id: string;
+
+  referenceNo: string;
   title: string;
-  slug: string;
-  refNumber: string | null;
-  agency: string;
+
+  description: string | null;
+  eligibility: string | null;
+  workPerformance: string | null;
+  proposalSubmission: string | null;
+
   deadline: string;
-  postedDate: string;
-  isFeatured: boolean;
-  priceCents: number;
+
+  countryId: number;
+  country: {
+    countryId: string;
+    countryName: string;
+    countryCode: string;
+  };
+
+  stateId: number;
+  state: State;
+
   categoryId: string;
-  stateId: string;
-  submissionType: "digital" | "physical" | "both";
-  status: "draft" | "published" | "expired" | "archived";
-  description?: string | null;
-  eligibility?: string | null;
-  contactInfo?: string | null;
-  city?: string | null;
-  documentOriginalName?: string | null;
-  documentKey?: string | null;
-  downloadUrl?: string | null;
-  category?: Category;
-  state?: State;
+  category: Category;
+
+  createdById: string;
+
   createdAt: string;
   updatedAt: string;
+
+  documents: TenderDocument[];
+}
+
+export interface TenderDocument {
+  id: string;
+  tenderId: string;
+
+  documentType: string;
+  documentS3Key: string;
+  documentS3Bucket: string;
+
+  documentOriginalName: string;
+  mimeType: string | null;
+  fileSize: number | null;
+
+  downloadUrl?: string | null;
 }

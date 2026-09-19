@@ -75,7 +75,7 @@ function TendersListContent() {
   } = useTenders({
     search: search || undefined,
     categoryId: selectedCategory || undefined,
-    stateId: stateId || undefined,
+    countryId: stateId || undefined,
     minPriceCents,
     maxPriceCents,
     page,

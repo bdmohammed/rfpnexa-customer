@@ -35,14 +35,14 @@ export function useCountryDropdown({
   // Set default selection to the first country if no value is provided
   useEffect(() => {
     if (!value && countries && countries.length > 0) {
-      onChange(countries[0].countryName);
+      onChange(countries[0].name);
     }
   }, [value, countries, onChange]);
 
   const filteredCountries = useMemo(() => {
     if (!countries) return [];
     return countries.filter((c) =>
-      c.countryName.toLowerCase().includes(searchTerm.toLowerCase()),
+      c.name.toLowerCase().includes(searchTerm.toLowerCase()),
     );
   }, [countries, searchTerm]);
 

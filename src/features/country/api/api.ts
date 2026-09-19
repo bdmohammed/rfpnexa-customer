@@ -7,14 +7,14 @@ export const countriesApi = {
    * Get distinct operational countries (Public)
    */
   getCountries() {
-    return apiClient.get<ApiResponse<Country[]>>("/countries");
+    return apiClient.get<ApiResponse<Country[]>>("/geography/countries");
   },
 
   /**
    * List and search geographical states / locations (Public)
    */
   getStates(query?: StateQuery) {
-    return apiClient.get<ApiResponse<State[]>>("/countries/states", {
+    return apiClient.get<ApiResponse<State[]>>("/geography/countries/states", {
       params: query,
     });
   },

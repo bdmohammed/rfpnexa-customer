@@ -1,6 +1,6 @@
 "use client";
 
-import { useStates } from "@/features/country/api/queries";
+import { useCountries, useStates } from "@/features/country/api/queries";
 import React from "react";
 import type { State } from "@/types";
 
@@ -19,7 +19,7 @@ export default function TenderFilters({
   setSelectedBudgets,
   className = "bg-[var(--surface)] border border-[var(--border)] rounded-2xl p-6 sticky top-28",
 }: TenderFiltersProps) {
-  const { data: states, isLoading } = useStates();
+  const { data: states, isLoading } = useCountries();
 
   const handleBudgetChange = (budgetKey: string) => {
     setSelectedBudgets((prev) =>
@@ -75,7 +75,7 @@ export default function TenderFilters({
         </select>
       </div>
 
-      <div className="mt-8">
+      {/* <div className="mt-8">
         <label className="text-sm font-semibold uppercase tracking-wider text-[var(--muted)]">
           Budget Range
         </label>
@@ -136,7 +136,7 @@ export default function TenderFilters({
             Govt
           </span>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
