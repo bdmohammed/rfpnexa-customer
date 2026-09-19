@@ -83,10 +83,10 @@ export default function CountryDropdown({
                 {filteredCountries.length > 0 ? (
                   filteredCountries.map((c) => (
                     <CountryOption
-                      key={c.countryCode}
-                      country={c.countryName}
+                      key={c.code}
+                      country={c.name}
                       selectedValue={value}
-                      onClick={() => handleSelect(c.countryId)}
+                      onClick={() => handleSelect(c.id)}
                     />
                   ))
                 ) : (

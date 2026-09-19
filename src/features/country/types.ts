@@ -1,7 +1,7 @@
 export interface Country {
-  countryId: string;
-  countryName: string;
-  countryCode: string;
+  id: string;
+  name: string;
+  code: string;
 }
 
 export interface State {

@@ -30,7 +30,7 @@ export const tenderApi = {
    * Get published tender by URL slug (Public)
    */
   getBySlug(slug: string) {
-    return apiClient.get<ApiResponse<TenderDetailsResponse>>(
+    return apiClient.get<ApiResponse<Tender>>(
       `/tenders/${slug}`,
     );
   },

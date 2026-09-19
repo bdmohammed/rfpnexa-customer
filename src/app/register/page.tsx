@@ -126,10 +126,10 @@ export default function RegisterPage() {
       const { confirmPassword, secondary_website, terms, ...payload } = data;
 
       const selectedCountry = countries?.find(
-        (c) => c.countryName.toLowerCase() === payload.country.toLowerCase(),
+        (c) => c.name.toLowerCase() === payload.country.toLowerCase(),
       );
       const countryId = selectedCountry
-        ? String(selectedCountry.countryId)
+        ? String(selectedCountry.id)
         : "";
 
       await registerUser({
@@ -141,9 +141,7 @@ export default function RegisterPage() {
         countryId,
       });
 
-      setSuccessMsg(
-        "Registration successful! Please check your email for a verification link.",
-      );
+      router.replace('/login');
     } catch (err: any) {
       const backendErrors = getValidationErrors(err);
       if (backendErrors) {
